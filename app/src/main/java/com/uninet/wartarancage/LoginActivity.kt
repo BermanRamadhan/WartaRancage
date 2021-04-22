@@ -4,10 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.util.Log
 import android.widget.*
 import androidx.appcompat.widget.AppCompatButton
 import com.google.firebase.auth.FirebaseAuth
 import com.uninet.wartarancage.utils.SharedPreferences
+
 
 class LoginActivity : AppCompatActivity() {
     lateinit var btnlogin: AppCompatButton
@@ -57,6 +59,7 @@ class LoginActivity : AppCompatActivity() {
 
         btnreg.setOnClickListener {
             var p: Intent
+            Log.d("LoginActivity", "onCreate: Tombol register di pencet")
             p = Intent(this, RegisterActivity::class.java)
             startActivity(p)
         }
