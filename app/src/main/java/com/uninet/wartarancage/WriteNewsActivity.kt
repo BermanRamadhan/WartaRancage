@@ -123,22 +123,17 @@ class WriteNewsActivity : AppCompatActivity() {
         }
     }
 
-
-
-
-
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode == 1 && resultCode == Activity.RESULT_OK){
             val takenImage = BitmapFactory.decodeFile(currentPhotoPath)
             imageView.setImageBitmap(takenImage)
-            Log.d("MainActivity", "onActivityResult: this is taken image $takenImage")
+            Log.d("MainActivity", "onActivityResult: this is taken image ${currentPhotoPath}")
         }else if (requestCode == 2 && resultCode == Activity.RESULT_OK){
 //            val takenImage = data?.extras?.get("data") as Bitmap
 //            imageView.setImageBitmap(takenImage)
             val selectedImage: Uri? = data?.data
-            Log.d("MainActivity", "onActivityResult: uri data di galery $selectedImage")
+            Log.d("MainActivity", "onActivityResult: uri data di galery $currentPhotoPath")
             //val thumbnail = BitmapFactory.decodeFile(selectedImage)
 
             imageView.setImageURI(selectedImage)
